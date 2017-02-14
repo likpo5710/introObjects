@@ -9,6 +9,19 @@
 // has the value blue, it should change it to red, and 
 // vice-versa.
 
+var flipColor = function(titleObject) {
+
+	if (titleObject['color'] === 'blue') {
+		titleObject['color'] = 'red'
+	}
+
+	else{
+		titleObject['color'] = 'blue'
+	}
+
+	return titleObject
+}
+
 // see test.js for example usage
 
 
@@ -17,7 +30,22 @@
 // Write a function called getFullNames that takes an array 
 // of objects with first and last names and returns an array 
 // of strings, where each string is a customer's full name.
+var names = {
+	first: 'Patrick',
+	last: 'Hildreth',
+	first: 'Leon',
+	last: 'Ikpo'
+}
 
+
+var getFullNames = function(objectArray) {
+
+	var fullName = []
+	for (var i = 0; i < objectArray.length; i++) {
+		return fullName[i] = names[i].first + ' ' + names[i].last
+	}
+	
+}
 // see test.js for example usage
 
 // Part 2
@@ -30,6 +58,30 @@
 // Give the dog a method called .speak(). speak() should receive a string as input and 
 // return a new version of that string where the first letter of every word is replaced 
 // with the letter 'r'.
+var speak = function(string){
+    var words = string.split(' ')
+    var retters = []
+    for(var index = 0; index < words.length; index = index + 1){
+        var letters = (words[index].split(''))
+        letters[0] = 'r'
+        retters.push(letters.join(''));
+    }
+    return retters.join(' ')
+}
+
+
+var generateDog = function(string){
+    var dog = {}
+    dog['name'] = (string);
+    dog['legs'] = 4;
+    dog['weight'] = '10 lbs';
+    dog['color'] = 'grey';
+    dog['speak'] =  speak
+    return dog
+}
+// log(generateDog("weezie"))
+
+var dog = generateDog("weezie")
 
 
 // see test.js for example usage
@@ -45,6 +97,15 @@
 
 // see test.js for example usage
 
+var pluck = function(objects, key) {
+	var output = []
+	for (var i = 0; i < objects.length; i++) {
+		var value = objects[i][key]
+		output.push(value)
+	}
+	return output
+}
+
 // Part 4
 
 // Write a function called getCounts that takes a string of text as input and returns
@@ -52,6 +113,22 @@
 
 // Note that your counts should NOT be case-sensitive.
 
+var getCounts = function(string) {
+
+	var words = string.split(' ')
+	var output = {}
+	for (i = 0; i < words.length; i++) {
+		var word = words[i]
+		if (output[word]) {
+			(output[word]) = (output[word]) + 1
+		}
+
+		else {
+			output[word] = 1
+		}
+	}
+		return output
+}
 
 // check test.js for examples of how this function should be used.
 
